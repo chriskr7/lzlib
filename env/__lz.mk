@@ -14,7 +14,7 @@ TARGET = LINUX
 XCC = g++
 
 # Home Path
-LZLIB_HOME = $(LZLIB_DIR)/bp
+LZLIB_HOME = $(LZLIB_DIR)
 LZLIB_CHOME = $(LZLIB_HOME)
 
 # Other Path
