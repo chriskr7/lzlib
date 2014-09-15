@@ -12,18 +12,18 @@ SHELL=/bin/bash
 # Compile Environment
 #
 
-TARGET = $(shell $(CP_HOME)/env/check_machine.sh)
+TARGET = $(shell $(LZLIB_HOME)/env/check_machine.sh)
 
 XCC = g++
 
 # Home Path
-CP_CHOME = $(CP_HOME)
+LZLIB_CHOME = $(LZLIB_HOME)
 
 # Other Path
-CP_LIB = $(CP_HOME)/lib
-CP_ENV = $(CP_HOME)/env
-CP_INC = $(CP_HOME)/inc
-CP_SRC = $(CP_HOME)/src
+LZLIB_LIB = $(LZLIB_HOME)/lib
+LZLIB_ENV = $(LZLIB_HOME)/env
+# LZLIB_INC = $(LZLIB_HOME)/inc
+# LZLIB_SRC = $(LZLIB_HOME)/src
 
 #OPT Mode Define
 Linux.OMODE = -w -fPIC
@@ -54,8 +54,9 @@ Linux.MATH.LFLAGS=-lm
 Darwin.MATH.LFLAGS=-lm
 
 #Compile Option Define
-CFLAGS = -I$(CP_INC) $($(TARGET).OMODE) $($(TARGET).THREAD.CFLAGS) $($(TARGET).PTHREAD.LFLAGS)
-DCFLAGS = -I$(CP_INC) $($(TARGET).OMODE) $($(TARGET).THREAD.CFLAGS) $($(TARGET).DEBUG_OPT)
+# CFLAGS = -I$(CP_INC) $($(TARGET).OMODE) $($(TARGET).THREAD.CFLAGS) $($(TARGET).PTHREAD.LFLAGS)
+CFLAGS = $($(TARGET).OMODE) $($(TARGET).THREAD.CFLAGS) $($(TARGET).PTHREAD.LFLAGS)
+DCFLAGS = $($(TARGET).OMODE) $($(TARGET).THREAD.CFLAGS) $($(TARGET).DEBUG_OPT)
 LFLAGS=$($(TARGET).PTHREAD.LFLAGS) $($(TARGET).SOCKET.LFLAGS) $($(TARGET).MATH.LFLAGS -L$(CP_LIB)
 # CPPFLAGS = -I$(BOOST_INC) $(Linux.CFLAGS) -L/usr/lib/gcc/x86_64-redhat-Linux/4.1.1/libstdc++.so
 # DCPPFLAGS = -I$(BOOST_INC) $(Linux.CFLAGS) $($(TARGET).DEBUG_OPT) -L/usr/lib/gcc/x86_64-redhat-Linux/4.1.1/libstdc++.so
