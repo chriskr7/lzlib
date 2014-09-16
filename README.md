@@ -1,6 +1,7 @@
 # LaZy C Library
 
-## Components List
+
+### Components List
 
 * lz_typeconv
   - type conversion component
