@@ -331,7 +331,7 @@ void delete_lz_time(p_lz_time p_time)
 
 /*------------------------------------------
  *
- *		lz_time interface
+ *		lz_datetime interface
  *
  *-----------------------------------------*/
 
