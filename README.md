@@ -1,4 +1,4 @@
-# LaZy C Library
+# LaZyDev C Library
 
 
 ### Components List
