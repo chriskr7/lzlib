@@ -33,5 +33,5 @@ int main(void)
     lz_int_2_leading_zero_str(buf2, 5, 727);
     printf("%s\n", buf2);
 
-	return 0;
+    return 0;
 }
