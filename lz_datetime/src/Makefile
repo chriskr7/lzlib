@@ -6,7 +6,7 @@ LIBSRC=lz_datetime.c
 
 OBJSRC=$(LIBSRC:.c=.o)
 
-LIBINC=-I$(LZLIB_HOME)/lz_datetime/inc
+LDFLAG=$(LZLIB_HOME)/lz_typeconv/lib/liblztypeconv.a
 
 # Default Rules:
 .c:
@@ -19,9 +19,11 @@ LIBINC=-I$(LZLIB_HOME)/lz_datetime/inc
 all: $(LIBARC)
 
 $(LIBARC): $(LIBSRC)
-	$(CC) -c $(CFLAGS) $(LIBINC) $(LFLAGS) $(LIBSRC)
+	$(CC) -c $(CFLAGS) $(LIBINC) $(LFLAGS) $(LDFLAGS) $(LIBSRC)
 	@ar rv $(LIBARC) $(OBJSRC)
 	@rm -f $(OBJSRC)
+	@cp $(LIBARC) $(LZLIB_HOME)/lz_datetime/lib
+	@rm -f $(LIBARC)
 
 install: all
 	cp $(LIBARC) $(LZLIB_LIB)
