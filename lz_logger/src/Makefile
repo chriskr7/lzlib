@@ -1,12 +1,12 @@
 include $(LZLIB_HOME)/env/__lz.mk
 
-LIBARC=liblzdt.a
+LIBARC=liblzlog.a
 
-LIBSRC=lz_datetime.c
+LIBSRC=lz_logger.c
 
 OBJSRC=$(LIBSRC:.c=.o)
 
-LDFLAG=$(LZLIB_LIB)/liblztypeconv.a
+LDFLAG=$(LZLIB_LIB)/liblztypeconv.a $(LZLIB_LIB)/liblzdt.a
 
 # Default Rules:
 .c:
@@ -22,11 +22,11 @@ $(LIBARC): $(LIBSRC)
 	$(CC) -c $(CFLAGS) $(LIBINC) $(LFLAGS) $(LDFLAGS) $(LIBSRC)
 	@ar rv $(LIBARC) $(OBJSRC)
 	@rm -f $(OBJSRC)
-	@cp $(LIBARC) $(LZLIB_HOME)/lz_datetime/lib
+	@cp $(LIBARC) $(LZLIB_HOME)/lz_logger/lib
 	@rm -f $(LIBARC)
 
 install: all
-	@cp $(LZLIB_HOME)/lz_datetime/lib/$(LIBARC) $(LZLIB_LIB)
+	@cp $(LZLIB_HOME)/lz_logger/lib/$(LIBARC) $(LZLIB_LIB)
 
 clean:
-	-rm -f $(LZLIB_HOME)/lz_datetime/lib/$(LIBARC) *.o
+	-rm -f $(LZLIB_HOME)/lz_logger/lib/$(LIBARC) *.o

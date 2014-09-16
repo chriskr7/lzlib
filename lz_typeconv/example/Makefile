@@ -2,7 +2,7 @@ include $(LZLIB_HOME)/env/__lz.mk
 
 PROGS= test
 
-LDFLAG=$(LZLIB_HOME)/lz_typeconv/lib/liblztypeconv.a
+LDFLAG=$(LZLIB_LIB)/liblztypeconv.a
 
 
 # Default Rules:

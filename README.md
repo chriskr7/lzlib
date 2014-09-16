@@ -9,3 +9,7 @@
 * lz_datetime
   - datetime component
   - dependency : lz_typeconv
+
+* lz_logger
+  - logger component
+  - dependency : lz_typeconv, lz_datetime
