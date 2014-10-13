@@ -13,3 +13,6 @@
 * lz_logger
   - logger component
   - dependency : lz_typeconv, lz_datetime
+
+* lz_hashmap
+  - hashmap component
