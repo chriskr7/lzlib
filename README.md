@@ -2,9 +2,10 @@
 
 
 ### System Export Value
+
 * You need to export LZLIB_HOME(the working directory) to .bash_profile or equivaluent.
 
-  example: in .bash_profile export
+  example: in .bash_profile
 
   `export LZLIB_HOME=~/work/lzlib`
 
